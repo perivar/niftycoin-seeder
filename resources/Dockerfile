@@ -51,6 +51,6 @@ EXPOSE 53
 ENTRYPOINT ["/app/bin/dnsseed"]
 
 CMD ["-h", "dnsseed.niftycoin.org", \
-     "-n", "seed.niftycoin.org", \
+     "-n", "niftycoin.org", \
      "-m", "dnsadmin.niftycoin.org", \
      "-p", "53"]
