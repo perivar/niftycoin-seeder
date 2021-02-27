@@ -405,13 +405,13 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed.litecointools.com", "dnsseed.litecoinpool.org", "dnsseed.ltc.xurious.com", "dnsseed.koin-project.com", "seed-a.litecoin.loshan.co.uk", "dnsseed.thrasher.io", ""};
-static const string testnet_seeds[] = {"testnet-seed.litecointools.com", "seed-b.litecoin.loshan.co.uk", "testnet-seed.ltc.xurious.com", "dnsseed-testnet.thrasher.io", ""};
+static const string mainnet_seeds[] = {"127.0.0.1", ""};
+static const string testnet_seeds[] = {"127.0.0.1", ""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 9333), true);
+    db.Add(CService("kjy2eqzk4zwi5zd3.onion", 5333), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
