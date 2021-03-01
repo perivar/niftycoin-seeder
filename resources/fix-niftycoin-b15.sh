@@ -77,7 +77,7 @@ MAIN_EXT_SECRET_KEY_BYTES="0x4E, 0x49, 0xAD, 0xE4"
 
 # dont change the following variables unless you know what you are doing
 LITECOIN_BRANCH=0.15
-LITECOIN_REPOS=https://github.com/litecoin-project/litecoin.git
+LITECOIN_REPOS=git@github.com:perivar/litecoin.git
 LITECOIN_PUB_KEY=040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9
 LITECOIN_MERKLE_HASH=97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9
 LITECOIN_MAIN_GENESIS_HASH=12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2
