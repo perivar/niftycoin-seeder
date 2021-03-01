@@ -6,11 +6,13 @@ SVG_FILE="nlogo.svg"
 
 ICO_FOLDER="res/icons"
 PIX_FOLDER="pixmaps"
+DOC_FOLDER="doc"
 TMP_FOLDER="tmp"
 
 mkdir -p $TMP_FOLDER
 mkdir -p $ICO_FOLDER
 mkdir -p $PIX_FOLDER
+mkdir -p $DOC_FOLDER
 
 # copy main png
 cp $PNG_FILE $ICO_FOLDER/bitcoin.png
@@ -41,3 +43,7 @@ convert -resize x128 -gravity center -crop 128x128+0+0 -flatten -colors 256 -bac
 convert -resize x128 -gravity center -crop 128x128+0+0 -flatten -colors 256 -background transparent $PNG_FILE $PIX_FOLDER/bitcoin128.xpm
 convert -resize x256 -gravity center -crop 256x256+0+0 -flatten -colors 256 -background transparent $PNG_FILE $PIX_FOLDER/bitcoin256.png
 convert -resize x256 -gravity center -crop 256x256+0+0 -flatten -colors 256 -background transparent $PNG_FILE $PIX_FOLDER/bitcoin256.xpm
+convert -resize x64 -gravity center -crop 64x64+0+0 -flatten -colors 256 -background transparent $PNG_FILE $PIX_FOLDER/bitcoin.ico
+
+#doc icon
+convert -resize x55 -gravity center -crop 55x55+0+0 -flatten -colors 256 -background transparent $PNG_FILE $DOC_FOLDER/bitcoin_logo_doxygen.png
