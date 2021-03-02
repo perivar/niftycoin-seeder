@@ -10,74 +10,73 @@ COIN_NAME_DENOM3="Niftoshis"
 COIN_URL="niftycoin.org"
 
 # x million coins at total (litecoin total supply is 84000000)
-TOTAL_SUPPLY=84000000
+TOTAL_SUPPLY=42000000
+HALFING_INTERVAL=420000
 
 # change
-MAINNET_PORT="5333"
-
-# keep
-TESTNET_PORT="19335"
-REGTESTNET_PORT="19444"
-MAIN_RPC_PORT="9332";
-TEST_RPC_PORT="19332";
-REGTEST_RPC_PORT="19332";
+MAIN_PORT="3333"          # original:  9333
+TEST_PORT="13335"         # original: 19335
+REGTEST_PORT="13444"      # original: 19444
+MAIN_RPC_PORT="3332"      # original:  9332
+# make sure these two are the same
+TEST_RPC_PORT="13332"     # original: 19332
+REGTEST_RPC_PORT="13332"  # original: 19332
 
 # Set these
-PHRASE="BBC NEWS 21/Feb/2021 US plane scatters engine debris over Denver homes"
+PHRASE="BBC NEWS 1/March/2021 Sarkozy: Former French president sentenced to jail for corruption"
 # First letter of the wallet address. Check https://en.bitcoin.it/wiki/Base58Check_encoding
 PUBKEY_CHAR="53"
 # number of blocks to wait to be able to spend coinbase UTXO's
 COINBASE_MATURITY=100
-# leave CHAIN empty for main network, -regtest for regression network and -testnet for test network
-CHAIN=""
 # this is the amount of coins to get as a reward of mining the block of height 1. if not set this will default to 50
-#PREMINED_AMOUNT=10000
+PREMINED_AMOUNT=2000000
 
 # warning: change this to your own pubkey to get the genesis block mining reward
-GENESIS_REWARD_PUBKEY=044e0d4bc823e20e14d66396a64960c993585400c53f1e6decb273f249bfeba0e71f140ffa7316f2cdaaae574e7d72620538c3e7791ae9861dfe84dd2955fc85e8
+GENESIS_REWARD_PUBKEY=04aec47b35fe068cd9e9044430683418f8d256a3e4af9c93b3d3981f8cca72553db204795d9485c0dcfaebb71f719390a5115944ae4bd9e1b20498a27de7aaf3a0
 
 # add this key information
-MAIN_PUB_KEY=040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9
-MERKLE_HASH=ab4127c2db071267873ab33b6349d6c181a2aa79501848cba33c8c2460237a48
-TIMESTAMP=1613933282
+MAIN_PUB_KEY=04aec47b35fe068cd9e9044430683418f8d256a3e4af9c93b3d3981f8cca72553db204795d9485c0dcfaebb71f719390a5115944ae4bd9e1b20498a27de7aaf3a0
+MERKLE_HASH=977a9b291938b8752ceccae6ec6bb500ee694679a1cd67405fbf6b1fe742ab13
+TIMESTAMP=1614638965
 TIMESTAMP_TEST=1486949366
 BITS=0x1e0ffff0
 
-MAIN_NONCE=2085157839
-TEST_NONCE=3581076
-REGTEST_NONCE=0
+MAIN_NONCE=2085694948
+TEST_NONCE=1027480
+REGTEST_NONCE=2
 
-MAIN_GENESIS_HASH=52a6b34f395c5e96052d53cca253c938625a33812a1aa2aeb7f17f89992efd62
-TEST_GENESIS_HASH=38e91efebafe7fd0590085f4253a9d94d29729bc8022e1e5279a8e00adfa6b39
-REGTEST_GENESIS_HASH=70e0c82bbb0b00624fe65880e6a9d5721b2964f5036e9c1216163ec237fccf15
+MAIN_GENESIS_HASH=1bff4bbd83f4cb3fc8341cf2b258da0777b38a1f567ca2dd56367e84d2402d9d
+TEST_GENESIS_HASH=dbf473f411a498ddaeaf95aa8ca475ac56a7e91ca91c61dabbdb72eadc7e7e4d
+REGTEST_GENESIS_HASH=d1a1bdd5814a23d0693eeaad05a5e20277818553db2e7a9b502b12eb76f65772
 
 POW_TARGET_TIMESPAN="3 * 24 * 60 * 60; // 3 days"
-POW_TARGET_SPACING="2 * 60;"
+POW_TARGET_SPACING="10 * 60;"
 
 # The message start string is designed to be unlikely to occur in normal data.
 # The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 # a large 32-bit integer with any alignment.
-MAIN_MESSAGE_START_BYTE0=0x4e
-MAIN_MESSAGE_START_BYTE1=0x49
-MAIN_MESSAGE_START_BYTE2=0x46
-MAIN_MESSAGE_START_BYTE3=0x54
+# The range that we want to use is the upper ASCII which is not valid UTF-8, this range is from 0x80 to 0xff. 
+MAIN_MESSAGE_START_BYTE0=0xaa
+MAIN_MESSAGE_START_BYTE1=0xed
+MAIN_MESSAGE_START_BYTE2=0xc1
+MAIN_MESSAGE_START_BYTE3=0xe5
 
-TEST_MESSAGE_START_BYTE0=0xfd
-TEST_MESSAGE_START_BYTE1=0xd2
-TEST_MESSAGE_START_BYTE2=0xc8
-TEST_MESSAGE_START_BYTE3=0xf1
+TEST_MESSAGE_START_BYTE0=0xbb
+TEST_MESSAGE_START_BYTE1=0xee
+TEST_MESSAGE_START_BYTE2=0xc2
+TEST_MESSAGE_START_BYTE3=0xe6
 
-REGTEST_MESSAGE_START_BYTE0=0xfa
-REGTEST_MESSAGE_START_BYTE1=0xbf
-REGTEST_MESSAGE_START_BYTE2=0xb5
-REGTEST_MESSAGE_START_BYTE3=0xda
+REGTEST_MESSAGE_START_BYTE0=0xcc
+REGTEST_MESSAGE_START_BYTE1=0xef
+REGTEST_MESSAGE_START_BYTE2=0xc3
+REGTEST_MESSAGE_START_BYTE3=0xe7
 
 MAIN_EXT_PUBLIC_KEY_BYTES="0x4E, 0x49, 0xB2, 0x1E"
 MAIN_EXT_SECRET_KEY_BYTES="0x4E, 0x49, 0xAD, 0xE4"
 
 # dont change the following variables unless you know what you are doing
 LITECOIN_BRANCH=0.15
-LITECOIN_REPOS=git@github.com:perivar/litecoin.git
+LITECOIN_REPOS=git@github.com:niftycoin-project/litecoin.git
 LITECOIN_PUB_KEY=040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9
 LITECOIN_MERKLE_HASH=97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9
 LITECOIN_MAIN_GENESIS_HASH=12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2
@@ -131,9 +130,24 @@ $SED -i "s/Litecoin/$COIN_NAME/g" .gitignore
 $SED -i "s/litecoin/$COIN_NAME_LOWER/g" .gitignore
 $SED -i "s/LITECOIN/$COIN_NAME_UPPER/g" .gitignore
 
-# now replace all ports
-$SED -i "s/9333/$MAINNET_PORT/g" src/chainparams.cpp contrib/qos/tc.sh contrib/seeds/generate-seeds.py doc/tor.md src/rpc/net.cpp test/functional/proxy_test.py
-$SED -i "s/19335/$TESTNET_PORT/g" src/chainparams.cpp contrib/qos/tc.sh contrib/seeds/generate-seeds.py doc/tor.md src/rpc/net.cpp test/functional/proxy_test.py
+# Now, this was a bit overzealous because it is changing actual references to bitcoin urls as well as Bitcoin Core 
+# which we do not want to change
+find -type f -not -path "./.git/*" -exec $SED -i "s/$COIN_NAME Core developers/Bitcoin Core developers/g" {} +
+
+# Now replace all ports
+# The p2p ports are defined in src/chainparams.cpp.
+#$SED -i "s/9333/$MAIN_PORT/g" src/chainparams.cpp
+#$SED -i "s/19335/$TEST_PORT/g" src/chainparams.cpp
+#$SED -i "s/19444/$REGTEST_PORT/g" src/chainparams.cpp
+find . -type f | grep -v "^./.git" | xargs $SED -i 's/\b9333\b/'"$MAIN_PORT"'/g'
+find . -type f | grep -v "^./.git" | xargs $SED -i 's/\b19335\b/'"$TEST_PORT"'/g'
+find . -type f | grep -v "^./.git" | xargs $SED -i 's/\b19444\b/'"$REGTEST_PORT"'/g'
+
+# The rpc ports are defined in src/chainparamsbase.cpp 
+#$SED -i "s/9332/$MAIN_RPC_PORT/g" src/chainparamsbase.cpp
+#$SED -i "s/19332/$TEST_RPC_PORT/g" src/chainparamsbase.cpp
+find . -type f | grep -v "^./.git" | xargs $SED -i 's/\b9332\b/'"$MAIN_RPC_PORT"'/g'
+find . -type f | grep -v "^./.git" | xargs $SED -i 's/\b19332\b/'"$TEST_RPC_PORT"'/g'
 
 # set supply and maturity
 $SED -i "s/84000000/$TOTAL_SUPPLY/" src/amount.h
@@ -142,6 +156,9 @@ $SED -i "s/COINBASE_MATURITY = 100/COINBASE_MATURITY = $COINBASE_MATURITY/" src/
 if [ -n "$PREMINED_AMOUNT" ]; then
    $SED -i "s/CAmount nSubsidy = 50 \* COIN;/if \(nHeight == 1\) return COIN \* $PREMINED_AMOUNT;\n    CAmount nSubsidy = 50 \* COIN;/" src/validation.cpp
 fi
+
+# set subsidy
+$SED -i "s/consensus.nSubsidyHalvingInterval = 840000;/consensus.nSubsidyHalvingInterval = $HALFING_INTERVAL;/g" src/chainparams.cpp
 
 # set check for reg testnet to genesis (this must go first since sero will math what we set them to)
 LITECOIN_REGTEST_CHECK_START=0
@@ -264,9 +281,11 @@ $SED -i -r "s,0xa0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6
 # These values are supposed to state the time window during which deployment of a particular protocol change is allowed to happen. 
 # For regtest that window is set to be from times 0 to 999999999999, so that you can do it whenever you want.
 # Make sure these are enabled from day 1 (except regtest which we keep)
+#ALWAYS ACTIVE and NO_TIMEOUT doesn't exist in the 0.15 branch
+#perl -0777 -p -i -w -e 's/(consensus.vDeployments\[Consensus::DEPLOYMENT_\w+\].nStartTime).*/$1 = Consensus::BIP9Deployment::ALWAYS_ACTIVE;/g' src/chainparams.cpp
+#perl -0777 -p -i -w -e 's/(consensus.vDeployments\[Consensus::DEPLOYMENT_\w+\].nTimeout) = (?!999999999999ULL).*/$1 = Consensus::BIP9Deployment::NO_TIMEOUT;/g' src/chainparams.cpp
 perl -0777 -p -i -w -e 's/(consensus.vDeployments\[Consensus::DEPLOYMENT_\w+\].nStartTime).*/$1 = 0;/g' src/chainparams.cpp
-perl -0777 -p -i -w -e 's/(consensus.vDeployments\[Consensus::DEPLOYMENT_\w+\].nTimeout) = (?!999999999999ULL).*/$1 = '"${TIMESTAMP}"';/g' src/chainparams.cpp
+perl -0777 -p -i -w -e 's/(consensus.vDeployments\[Consensus::DEPLOYMENT_\w+\].nTimeout).*/$1 = 999999999999ULL;/g' src/chainparams.cpp
 
 # remove all entries in chainparamsseeds.h
 perl -0777 -p -i -w -e 's/(static SeedSpec6 pnSeed6_\w+\[\] = \{).*?(?=\};)\};/$1};/gs' src/chainparamsseeds.h
-
